@@ -4,7 +4,21 @@ public class IterativeFibonacci implements FibonacciStrategy {
 
     @Override
     public long compute(int n) {
-        //TODO implement using iterative approach
+        if (n == 0 || n == 1) {
+            return n;
+        }
+
+        int prev2 = 0;
+        int prev1 = 1;
+        int x = 0;
+
+        for (int i = 2; i <= n; i++) {
+            x = prev1 + prev2;
+            prev2 = prev1;
+            prev1 = x;
+        }
+
+        return x;
     }
 
 
